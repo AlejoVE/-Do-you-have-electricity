@@ -16,7 +16,17 @@
     },
     "date": {
       "type": "string"
+    },
+    "street_address": {
+      "type": "string"
     }
   },
-  "required": ["id", "city", "state", "date", "have_electricity"]
+  "required": [
+    "id",
+    "city",
+    "state",
+    "date",
+    "have_electricity",
+    "street_address"
+  ]
 }

@@ -53,8 +53,9 @@ const controllers = {
     const newReport = {
       id: 0,
       have_electricity: req.body.have_electricity,
-      city: req.body.city,
       state: req.body.state,
+      city: req.body.city,
+      street_address: req.body.street_address,
       date: "",
     };
 
@@ -112,6 +113,7 @@ const controllers = {
       findReport.city = req.body.city;
       findReport.state = req.body.state;
       findReport.have_electricity = req.body.have_electricity;
+      findReport.street_address = req.body.street_address;
 
       const date_time = new Date();
       const formattedDate = `${date_time.toDateString()} ${date_time.toLocaleTimeString()}`;
@@ -126,6 +128,7 @@ const controllers = {
         res.status(400).json({
           error: {
             message: error.message,
+            dataPath: error.dataPath,
           },
         });
         return;
@@ -136,6 +139,34 @@ const controllers = {
       await writeFile(DATA_PATH, newFileDataString);
 
       res.json(findReport);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Something went wrong, please try later.");
+    }
+  },
+  deleteReport: async (req, res) => {
+    const idToDelete = Number(req.params.id);
+
+    try {
+      const DataString = await readFile(DATA_PATH, "utf-8");
+      const fileData = JSON.parse(DataString);
+
+      const entryToDelete = fileData.reports.find(
+        (report) => report.id === idToDelete
+      );
+
+      if (entryToDelete) {
+        const index = fileData.reports.indexOf(entryToDelete);
+        fileData.reports.splice(index, 1);
+
+        const newFileDataString = JSON.stringify(fileData, null, "  ");
+
+        await writeFile(DATA_PATH, newFileDataString);
+
+        res.json(entryToDelete);
+      } else {
+        res.send(`no report with id ${idToDelete}`);
+      }
     } catch (error) {
       console.log(error);
       res.status(500).send("Something went wrong, please try later.");
