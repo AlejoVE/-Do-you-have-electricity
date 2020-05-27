@@ -53,8 +53,9 @@ const controllers = {
     const newReport = {
       id: 0,
       have_electricity: req.body.have_electricity,
-      city: req.body.city,
       state: req.body.state,
+      city: req.body.city,
+      street_address: req.body.street_address,
       date: "",
     };
 
@@ -112,6 +113,7 @@ const controllers = {
       findReport.city = req.body.city;
       findReport.state = req.body.state;
       findReport.have_electricity = req.body.have_electricity;
+      findReport.street_address = req.body.street_address;
 
       const date_time = new Date();
       const formattedDate = `${date_time.toDateString()} ${date_time.toLocaleTimeString()}`;
@@ -126,6 +128,7 @@ const controllers = {
         res.status(400).json({
           error: {
             message: error.message,
+            dataPath: error.dataPath,
           },
         });
         return;

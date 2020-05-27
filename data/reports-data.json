@@ -4,30 +4,26 @@
     {
       "id": 1,
       "have_electricity": true,
-      "city": "Guanare",
       "state": "Portuguesa",
+      "city": "Guanare",
+      "street_address": "some street",
       "date": "Wed May 27 2020 20:27:13"
     },
     {
       "id": 2,
       "have_electricity": false,
-      "city": "Barinas",
       "state": "Barinas",
+      "city": "Barinas",
+      "street_address": "some street",
       "date": "Wed May 27 2020 20:26:49"
     },
     {
       "id": 3,
       "have_electricity": false,
-      "city": "Guanarito",
       "state": "portuguesa",
+      "city": "Guanarito",
+      "street_address": "some street",
       "date": "Wed May 27 2020 18:57:50"
-    },
-    {
-      "id": 4,
-      "have_electricity": true,
-      "city": "Puerto Ayacucho",
-      "state": "Amazonas",
-      "date": "Wed May 27 2020 20:25:23"
     }
   ]
 }
