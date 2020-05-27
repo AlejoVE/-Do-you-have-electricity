@@ -1,0 +1,22 @@
+{
+  "title": "report",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "have_electricity": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "date_&_time": {
+      "type": "string"
+    }
+  },
+  "required": ["id", "city", "state", "date_&_time"]
+}
