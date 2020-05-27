@@ -9,5 +9,6 @@ router.get("/reports", controllers.getAllReports);
 router.get("/reports/:id", controllers.getReport);
 router.post("/reports", controllers.addReport);
 router.put("/reports/:id", controllers.modifyReport);
+router.delete("/reports/:id", controllers.deleteReport);
 
 module.exports = router;

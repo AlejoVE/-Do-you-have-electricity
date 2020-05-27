@@ -141,6 +141,34 @@ const controllers = {
       res.status(500).send("Something went wrong, please try later.");
     }
   },
+  deleteReport: async (req, res) => {
+    const idToDelete = Number(req.params.id);
+
+    try {
+      const DataString = await readFile(DATA_PATH, "utf-8");
+      const fileData = JSON.parse(DataString);
+
+      const entryToDelete = fileData.reports.find(
+        (report) => report.id === idToDelete
+      );
+
+      if (entryToDelete) {
+        const index = fileData.reports.indexOf(entryToDelete);
+        fileData.reports.splice(index, 1);
+
+        const newFileDataString = JSON.stringify(fileData, null, "  ");
+
+        await writeFile(DATA_PATH, newFileDataString);
+
+        res.json(entryToDelete);
+      } else {
+        res.send(`no report with id ${idToDelete}`);
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Something went wrong, please try later.");
+    }
+  },
 };
 
 async function getReports(dataPath) {
