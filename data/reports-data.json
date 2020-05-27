@@ -1,12 +1,19 @@
 {
-  "nextId": 2,
+  "nextId": 3,
   "reports": [
     {
       "id": 1,
-      "have_electricity": "yes",
+      "have_electricity": true,
       "city": "Guanare",
       "state": "Portuguesa",
       "date_&_time": "27/05/20  16:17"
+    },
+    {
+      "id": 2,
+      "have_electricity": false,
+      "city": "Barinas",
+      "state": "Barinas",
+      "date_&_time": "27/05/20  16:55"
     }
   ]
 }
