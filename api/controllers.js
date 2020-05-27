@@ -94,6 +94,53 @@ const controllers = {
       res.status(500).send("Something went wrong, please try later.");
     }
   },
+  modifyReport: async (req, res) => {
+    const reportToUpdateId = Number(req.params.id);
+
+    try {
+      const content = await readFile(DATA_PATH, "utf-8");
+      const data = JSON.parse(content);
+      const reports = data.reports;
+      const findReport = reports.find(
+        (report) => report.id === reportToUpdateId
+      );
+      if (!findReport) {
+        res.status(404).send("Not found");
+        return;
+      }
+
+      findReport.city = req.body.city;
+      findReport.state = req.body.state;
+      findReport.have_electricity = req.body.have_electricity;
+
+      const date_time = new Date();
+      const formattedDate = `${date_time.toDateString()} ${date_time.toLocaleTimeString()}`;
+      findReport.date = formattedDate;
+
+      const isValid = tv4.validate(findReport, File_SCHEMA);
+
+      if (!isValid) {
+        const error = tv4.error;
+        console.error(error);
+
+        res.status(400).json({
+          error: {
+            message: error.message,
+          },
+        });
+        return;
+      }
+
+      const newFileDataString = JSON.stringify(data, null, "  ");
+
+      await writeFile(DATA_PATH, newFileDataString);
+
+      res.json(findReport);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Something went wrong, please try later.");
+    }
+  },
 };
 
 async function getReports(dataPath) {

@@ -6,14 +6,14 @@
       "have_electricity": true,
       "city": "Guanare",
       "state": "Portuguesa",
-      "date": "27/05/20  16:17"
+      "date": "Wed May 27 2020 20:27:13"
     },
     {
       "id": 2,
       "have_electricity": false,
       "city": "Barinas",
       "state": "Barinas",
-      "date": "27/05/20  16:55"
+      "date": "Wed May 27 2020 20:26:49"
     },
     {
       "id": 3,
@@ -27,7 +27,7 @@
       "have_electricity": true,
       "city": "Puerto Ayacucho",
       "state": "Amazonas",
-      "date": "Wed May 27 2020 19:16:08"
+      "date": "Wed May 27 2020 20:25:23"
     }
   ]
 }
