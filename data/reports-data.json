@@ -1,0 +1,12 @@
+{
+  "nextId": 2,
+  "reports": [
+    {
+      "id": 1,
+      "have_electricity": "yes",
+      "city": "Guanare",
+      "state": "Portuguesa",
+      "date_&_time": "27/05/20  16:17"
+    }
+  ]
+}
