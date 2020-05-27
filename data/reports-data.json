@@ -1,19 +1,33 @@
 {
-  "nextId": 3,
+  "nextId": 5,
   "reports": [
     {
       "id": 1,
       "have_electricity": true,
       "city": "Guanare",
       "state": "Portuguesa",
-      "date_&_time": "27/05/20  16:17"
+      "date": "27/05/20  16:17"
     },
     {
       "id": 2,
       "have_electricity": false,
       "city": "Barinas",
       "state": "Barinas",
-      "date_&_time": "27/05/20  16:55"
+      "date": "27/05/20  16:55"
+    },
+    {
+      "id": 3,
+      "have_electricity": false,
+      "city": "Guanarito",
+      "state": "portuguesa",
+      "date": "Wed May 27 2020 18:57:50"
+    },
+    {
+      "id": 4,
+      "have_electricity": true,
+      "city": "Puerto Ayacucho",
+      "state": "Amazonas",
+      "date": "Wed May 27 2020 19:16:08"
     }
   ]
 }

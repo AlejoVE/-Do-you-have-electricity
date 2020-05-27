@@ -14,9 +14,9 @@
     "state": {
       "type": "string"
     },
-    "date_&_time": {
+    "date": {
       "type": "string"
     }
   },
-  "required": ["id", "city", "state", "date_&_time"]
+  "required": ["id", "city", "state", "date", "have_electricity"]
 }
