@@ -6,7 +6,7 @@
       "type": "number"
     },
     "have_electricity": {
-      "type": "string"
+      "type": "boolean"
     },
     "city": {
       "type": "string"
