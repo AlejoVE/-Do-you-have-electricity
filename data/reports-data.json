@@ -1,5 +1,5 @@
 {
-  "nextId": 2,
+  "nextId": 3,
   "reports": [
     {
       "id": 1,
@@ -7,6 +7,13 @@
       "city": "Guanare",
       "state": "Portuguesa",
       "date_&_time": "27/05/20  16:17"
+    },
+    {
+      "id": 2,
+      "have_electricity": "no",
+      "city": "Barinas",
+      "state": "Barinas",
+      "date_&_time": "27/05/20  16:55"
     }
   ]
 }
