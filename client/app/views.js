@@ -61,6 +61,8 @@ function createDiv(report) {
         <br />
         <p><strong>Date:</strong> ${report.date}</p>
       </fieldset>
+      <button class="btn btn-danger" id="btn-delete-${report.id}" onclick="handlers.deleteReport(event)">Delete</button>
+      <button class="btn btn-primary" id="btn-modify-${report.id}">Modify Report</button>
     </form>
 </details>
 `;
