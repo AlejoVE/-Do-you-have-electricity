@@ -68,21 +68,3 @@ function createDiv(report) {
   divEl.appendChild(ulEl);
   return divEl;
 }
-
-// `<form>
-//     <fieldset disabled>
-//         <label>State:</label>
-//         <input type=text value="${report.state}">
-//        <br>
-//        <label>City:</label>
-//         <input type=text value="${report.city}">
-//         <br>
-//         <label>Street address:</label>
-//         <input type=text value="${report.street_address}">
-//         <br>
-//         <label>Have Electricity:</label>
-//         <input type="text" value="yes">
-//         <br>
-//         <p>Date: ${report.date}</p>
-//     </fieldset>
-// </form>`
