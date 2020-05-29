@@ -47,6 +47,7 @@ const views = {
     const container = document.getElementById("container-new-report");
     const formEl = document.createElement("form");
     formEl.name = "reportForm";
+    formEl.id = "report-form";
     formEl.innerHTML = `<br /><label>Have Electricity?</label>
   <br />
   <div class="form-check form-check-inline">
@@ -123,6 +124,12 @@ const views = {
   <button type="submit" class="btn btn-danger" id="cancel-button">Cancel</button>`;
 
     container.appendChild(formEl);
+  },
+  closeReportForm: () => {
+    document.getElementById("report-button").removeAttribute("disabled");
+    const parent = document.getElementById("container-new-report");
+    const child = document.getElementById("report-form");
+    parent.removeChild(child);
   },
 };
 
