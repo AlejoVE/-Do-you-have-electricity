@@ -1,5 +1,5 @@
 {
-  "nextId": 5,
+  "nextId": 15,
   "reports": [
     {
       "id": 1,
@@ -24,6 +24,30 @@
       "city": "Guanarito",
       "street_address": "some street",
       "date": "Wed May 27 2020 18:57:50"
+    },
+    {
+      "id": 7,
+      "have_electricity": true,
+      "state": "Distrito Capital",
+      "city": "Ciudad",
+      "street_address": "sdsds",
+      "date": "Fri May 29 2020 20:42:59"
+    },
+    {
+      "id": 9,
+      "have_electricity": false,
+      "state": "Miranda",
+      "city": "Rue de la Tonne, 80B 4000 Liege",
+      "street_address": "Rue de la Tonne, 80B 4000 Liege",
+      "date": "Fri May 29 2020 20:44:54"
+    },
+    {
+      "id": 14,
+      "have_electricity": true,
+      "state": "Distrito Capital",
+      "city": "Caracas",
+      "street_address": "Alguna calle",
+      "date": "Fri May 29 2020 21:27:36"
     }
   ]
 }

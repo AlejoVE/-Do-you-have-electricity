@@ -3,7 +3,7 @@ const handlers = {
     document.getElementById("report-button").setAttribute("disabled", true);
     // document.getElementById("report-button").removeAttribute("disabled");
     views.addReportForm();
-    saveButtonListener();
+    ButtonListeners();
   },
   addReport: async (e) => {
     e.preventDefault();
@@ -34,6 +34,8 @@ const handlers = {
         },
       });
       alert("Report saved");
+      views.closeReportForm();
+      location.reload();
     } catch (error) {
       console.log(error);
     }
@@ -59,10 +61,14 @@ const handlers = {
   },
 };
 
-function saveButtonListener() {
+function ButtonListeners() {
   document
     .getElementById("save-button")
     .addEventListener("click", handlers.addReport);
+
+  document
+    .getElementById("cancel-button")
+    .addEventListener("click", views.closeReportForm);
 }
 
 function getRadioButtonSelectedValue(ctrl) {
