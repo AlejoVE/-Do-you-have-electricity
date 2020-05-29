@@ -43,6 +43,86 @@ const views = {
     }
     parentFalse.removeChild(child);
   },
+  addReportForm: () => {
+    const container = document.getElementById("container-new-report");
+    const formEl = document.createElement("form");
+    formEl.innerHTML = `<br /><label>Have Electricity?</label>
+  <br />
+  <div class="form-check form-check-inline">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="inlineRadioOptions"
+      id="inlineRadio1"
+      value="option1"
+    />
+    <label class="form-check-label" for="inlineRadio1">Yes</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="inlineRadioOptions"
+      id="inlineRadio2"
+      value="option2"
+    required/>
+    <label class="form-check-label" for="inlineRadio2">No</label>
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="exampleFormControlInput1">City</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput1"
+      placeholder="example: Caracas"
+    required/>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">State</label>
+    <select class="form-control" id="exampleFormControlSelect1" required>
+      <option value="" selected disabled>Please select</option>
+      <option>Amazonas</option>
+      <option>Anzoátegui</option>
+      <option>Apure</option>
+      <option>Aragua</option>
+      <option>Barinas</option>
+      <option>Bolívar</option>
+      <option>Carabobo</option>
+      <option>Cojedes</option>
+      <option>Delta Amacuro</option>
+      <option>Barinas</option>
+      <option>Distrito Capital</option>
+      <option>Falcón</option>
+      <option>Guárico</option>
+      <option>Lara</option>
+      <option>Mérida</option>
+      <option>Miranda</option>
+      <option>Monagas</option>
+      <option>Nueva Esparta</option>
+      <option>Portuguesa</option>
+      <option>Sucre</option>
+      <option>Táchira</option>
+      <option>Trujillo</option>
+      <option>Vargas</option>
+      <option>Yaracuy</option>
+      <option>Zulia</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Street address</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput1"
+      placeholder="example: some address"
+     required/>
+  </div>
+  <button type="submit" class="btn btn-success" id="save-button">Save report</button>
+  <button type="submit" class="btn btn-danger" id="cancel-button">Cancel</button>`;
+
+    container.appendChild(formEl);
+  },
 };
 
 function createDiv(report) {

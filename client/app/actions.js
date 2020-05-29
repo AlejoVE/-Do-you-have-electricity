@@ -1,4 +1,12 @@
 const handlers = {
+  addReport: async () => {
+    console.log("hi");
+    views.addReportForm();
+    try {
+    } catch (error) {
+      console.log(error);
+    }
+  },
   deleteReport: async (e) => {
     e.preventDefault();
     const id = Number(
