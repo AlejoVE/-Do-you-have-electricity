@@ -13,8 +13,9 @@ const views = {
     });
 
     const divElTrue = document.createElement("div");
+    divElTrue.setAttribute("id", "true-reports");
     const divElFalse = document.createElement("div");
-
+    divElFalse.setAttribute("id", "false-reports");
     theyDoNotHaveElectricity.forEach((report) => {
       const divEl = createDiv(report);
       divElFalse.appendChild(divEl);
@@ -31,10 +32,22 @@ const views = {
 
     return divElFalse;
   },
+  deleteReport: (id, value) => {
+    const parentFalse = document.getElementById("false-reports");
+    const parentTrue = document.getElementById("true-reports");
+    const child = document.getElementById(`${id}`);
+
+    if (value === true) {
+      parentTrue.removeChild(child);
+      return;
+    }
+    parentFalse.removeChild(child);
+  },
 };
 
 function createDiv(report) {
   const divEl = document.createElement("div");
+  divEl.setAttribute("id", report.id);
   const ulEl = document.createElement("ul");
   const li = document.createElement("li");
   let haveElectricity = "yes";
@@ -45,7 +58,7 @@ function createDiv(report) {
 
   li.innerHTML = `<details close>
   <summary>Report N°: ${report.id}. Place: ${report.city} </summary>
-    <form id="${report.id}">
+    <form>
       <fieldset disabled>
         <label>State:</label>
         <input type="text" value="${report.state}" />

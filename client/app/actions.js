@@ -1,16 +1,19 @@
 const handlers = {
   deleteReport: async (e) => {
     e.preventDefault();
+    const id = Number(
+      e.target.parentNode.parentNode.parentNode.parentNode.parentNode.id
+    );
+    const valueElectricity = e.target.form[4].value;
+    const valueBoolean = valueElectricity === "yes";
+
     try {
-      const id = Number(e.target.form.id);
       await fetch(`/api/reports/${id}`, {
         method: "DELETE",
       });
-      const res = await fetch("/api/reports");
-      const reports = await res.json();
 
-      views.renderReports(reports);
-      //   alert("file is deleted");
+      views.deleteReport(id, valueBoolean);
+      alert("Report removed");
     } catch (error) {
       console.log(error);
     }
