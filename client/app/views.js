@@ -45,7 +45,7 @@ function createDiv(report) {
 
   li.innerHTML = `<details close>
   <summary>Report N°: ${report.id}. Place: ${report.city} </summary>
-    <form>
+    <form id="${report.id}">
       <fieldset disabled>
         <label>State:</label>
         <input type="text" value="${report.state}" />
