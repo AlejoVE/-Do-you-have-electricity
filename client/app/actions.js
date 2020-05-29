@@ -1,7 +1,8 @@
 const handlers = {
   addReport: async () => {
-    console.log("hi");
+    document.getElementById("report-button").setAttribute("disabled", true);
     views.addReportForm();
+    press = true;
     try {
     } catch (error) {
       console.log(error);
