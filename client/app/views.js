@@ -46,6 +46,7 @@ const views = {
   addReportForm: () => {
     const container = document.getElementById("container-new-report");
     const formEl = document.createElement("form");
+    formEl.name = "reportForm";
     formEl.innerHTML = `<br /><label>Have Electricity?</label>
   <br />
   <div class="form-check form-check-inline">
@@ -54,7 +55,7 @@ const views = {
       type="radio"
       name="inlineRadioOptions"
       id="inlineRadio1"
-      value="option1"
+      value="yes"
     />
     <label class="form-check-label" for="inlineRadio1">Yes</label>
   </div>
@@ -64,7 +65,7 @@ const views = {
       type="radio"
       name="inlineRadioOptions"
       id="inlineRadio2"
-      value="option2"
+      value="no"
     required/>
     <label class="form-check-label" for="inlineRadio2">No</label>
   </div>
