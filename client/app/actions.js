@@ -42,9 +42,7 @@ const handlers = {
   },
   deleteReport: async (e) => {
     e.preventDefault();
-    const id = Number(
-      e.target.parentNode.parentNode.parentNode.parentNode.parentNode.id
-    );
+    const id = getId(e);
     const valueElectricity = e.target.form[4].value;
     const valueBoolean = valueElectricity === "yes";
 
@@ -64,11 +62,6 @@ const handlers = {
     const fieldsetElement = e.target.parentNode.firstElementChild;
     fieldsetElement.removeAttribute("disabled");
 
-    const inputCity = e.target.form[2].value;
-    const inputState = e.target.form[3].value;
-    const inputAddress = e.target.form[4].value;
-    console.log(inputCity);
-
     const id = e.target.id;
 
     const buttonEl = document.getElementById(`${id}`);
@@ -77,16 +70,51 @@ const handlers = {
     buttonEl.setAttribute("class", "btn btn-success");
     buttonEl.removeAttribute("onclick");
 
-    buttonEl.addEventListener("click", (e) => {
+    buttonEl.addEventListener("click", async (e) => {
       e.preventDefault();
+      const id = getId(e);
       const inputState = e.target.form[1].value;
-      const inputCity = e.target.form[2].value;
-      const inputAddress = e.target.form[3].value;
-      const inputHaveElectricity = e.target.form[4].value;
-      console.log(inputState);
-      console.log(inputCity);
-      console.log(inputAddress);
-      console.log(inputHaveElectricity);
+      const inputCity = e.target.form[2].value.trim();
+      const inputAddress = e.target.form[3].value.trim();
+      const inputHaveElectricity = e.target.form[4].value.toLowerCase().trim();
+
+      if (
+        inputCity === "" ||
+        inputAddress === "" ||
+        inputHaveElectricity === ""
+      ) {
+        alert("Please fill in all the fields of the form");
+        return;
+      }
+      if (inputHaveElectricity !== "yes") {
+        if (inputHaveElectricity !== "no") {
+          alert(
+            `The only valid values for "Have Electricity" are "yes" or "no", please try again`
+          );
+          return;
+        }
+      }
+      const value = inputHaveElectricity === "yes";
+
+      try {
+        await fetch("/api/reports/" + id, {
+          method: "PUT",
+          body: JSON.stringify({
+            state: inputState,
+            city: inputCity,
+            have_electricity: value,
+            street_address: inputAddress,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        });
+
+        alert("Report successfully modified!");
+        location.reload();
+      } catch (error) {
+        console.log(error);
+      }
     });
   },
 };
@@ -103,4 +131,11 @@ function ButtonListeners() {
 
 function getRadioButtonSelectedValue(ctrl) {
   for (i = 0; i < ctrl.length; i++) if (ctrl[i].checked) return ctrl[i].value;
+}
+
+function getId(e) {
+  const id = Number(
+    e.target.parentNode.parentNode.parentNode.parentNode.parentNode.id
+  );
+  return id;
 }
