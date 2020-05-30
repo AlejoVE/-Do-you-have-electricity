@@ -1,7 +1,6 @@
 const handlers = {
   displayForm: () => {
     document.getElementById("report-button").setAttribute("disabled", true);
-    // document.getElementById("report-button").removeAttribute("disabled");
     views.addReportForm();
     ButtonListeners();
   },

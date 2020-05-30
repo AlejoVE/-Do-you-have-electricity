@@ -11,11 +11,3 @@ const init = async () => {
 };
 
 init();
-
-// fetch("/api/reports")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     console.log(data);
-//     document.getElementById("reports-container").innerHTML = "hola";
-//   })
-//   .catch((err) => console.error(err));
