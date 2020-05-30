@@ -67,7 +67,7 @@ const views = {
       name="inlineRadioOptions"
       id="inlineRadio2"
       value="no"
-    required/>
+    required checked/>
     <label class="form-check-label" for="inlineRadio2">No</label>
   </div>
   <br />
@@ -147,9 +147,36 @@ function createDiv(report) {
   li.innerHTML = `<details close>
   <summary>Report N°: ${report.id}. Place: ${report.city} </summary>
     <form>
-      <fieldset disabled>
+      <fieldset id ="fieldset-${report.id} " disabled>
         <label>State:</label>
-        <input type="text" value="${report.state}" />
+        <select class="form-control" id="exampleFormControlSelect1" required>
+      <option value="${report.state}" selected disabled>${report.state}</option>
+      <option>Amazonas</option>
+      <option>Anzoátegui</option>
+      <option>Apure</option>
+      <option>Aragua</option>
+      <option>Barinas</option>
+      <option>Bolívar</option>
+      <option>Carabobo</option>
+      <option>Cojedes</option>
+      <option>Delta Amacuro</option>
+      <option>Barinas</option>
+      <option>Distrito Capital</option>
+      <option>Falcón</option>
+      <option>Guárico</option>
+      <option>Lara</option>
+      <option>Mérida</option>
+      <option>Miranda</option>
+      <option>Monagas</option>
+      <option>Nueva Esparta</option>
+      <option>Portuguesa</option>
+      <option>Sucre</option>
+      <option>Táchira</option>
+      <option>Trujillo</option>
+      <option>Vargas</option>
+      <option>Yaracuy</option>
+      <option>Zulia</option>
+    </select>
         <br />
         <label>City:</label>
         <input type="text" value="${report.city}" />
@@ -163,7 +190,7 @@ function createDiv(report) {
         <p><strong>Date:</strong> ${report.date}</p>
       </fieldset>
       <button class="btn btn-danger" id="btn-delete-${report.id}" onclick="handlers.deleteReport(event)">Delete</button>
-      <button class="btn btn-primary" id="btn-modify-${report.id}">Modify Report</button>
+      <button class="btn btn-primary" id="btn-modify-${report.id}" onclick="handlers.modifyReport(event)">Modify Report</button>
     </form>
 </details>
 `;

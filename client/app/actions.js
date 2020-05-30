@@ -59,6 +59,36 @@ const handlers = {
       console.log(error);
     }
   },
+  modifyReport: (e) => {
+    e.preventDefault();
+    const fieldsetElement = e.target.parentNode.firstElementChild;
+    fieldsetElement.removeAttribute("disabled");
+
+    const inputCity = e.target.form[2].value;
+    const inputState = e.target.form[3].value;
+    const inputAddress = e.target.form[4].value;
+    console.log(inputCity);
+
+    const id = e.target.id;
+
+    const buttonEl = document.getElementById(`${id}`);
+    buttonEl.removeAttribute("class");
+    buttonEl.innerHTML = "Save";
+    buttonEl.setAttribute("class", "btn btn-success");
+    buttonEl.removeAttribute("onclick");
+
+    buttonEl.addEventListener("click", (e) => {
+      e.preventDefault();
+      const inputState = e.target.form[1].value;
+      const inputCity = e.target.form[2].value;
+      const inputAddress = e.target.form[3].value;
+      const inputHaveElectricity = e.target.form[4].value;
+      console.log(inputState);
+      console.log(inputCity);
+      console.log(inputAddress);
+      console.log(inputHaveElectricity);
+    });
+  },
 };
 
 function ButtonListeners() {
