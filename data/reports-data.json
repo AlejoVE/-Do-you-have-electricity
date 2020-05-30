@@ -1,5 +1,5 @@
 {
-  "nextId": 5,
+  "nextId": 16,
   "reports": [
     {
       "id": 1,
@@ -11,11 +11,11 @@
     },
     {
       "id": 2,
-      "have_electricity": false,
+      "have_electricity": true,
       "state": "Barinas",
       "city": "Barinas",
       "street_address": "some street",
-      "date": "Wed May 27 2020 20:26:49"
+      "date": "Sat May 30 2020 19:56:26"
     },
     {
       "id": 3,
@@ -24,6 +24,30 @@
       "city": "Guanarito",
       "street_address": "some street",
       "date": "Wed May 27 2020 18:57:50"
+    },
+    {
+      "id": 7,
+      "have_electricity": false,
+      "state": "Distrito Capital",
+      "city": "Petare",
+      "street_address": "some street",
+      "date": "Sat May 30 2020 19:58:12"
+    },
+    {
+      "id": 14,
+      "have_electricity": true,
+      "state": "Distrito Capital",
+      "city": "Caracas",
+      "street_address": "some street",
+      "date": "Sat May 30 2020 19:56:53"
+    },
+    {
+      "id": 15,
+      "have_electricity": false,
+      "state": "Anzoátegui",
+      "city": "Barcelona",
+      "street_address": "some street",
+      "date": "Sat May 30 2020 19:58:00"
     }
   ]
 }
