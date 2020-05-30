@@ -1,12 +1,11 @@
-# -Do-you-have-electricity?
-
-## Screenshot:
-
-![alt text](https://user-images.githubusercontent.com/59319966/83335991-b900c280-a2b0-11ea-9b5a-69e1b4325e24.png "Screenshot")
+# Do you have electricity?
 
 ## Description:
 
 This project was built to be used by Venezuelans in times of crisis, consists of a webpage that shows the user the reports of the places where there is electricity and where there is not.
+
+## Demo:
+![alt text](client/img/2020-05-30_20h43_57.gif)
 
 ## Motivation:
 
@@ -32,6 +31,10 @@ Receiving information on time can be extremely useful, it can help people to be 
 - Node
 - Express
 - Bootstrap
+
+## Screenshot:
+
+![alt text](https://user-images.githubusercontent.com/59319966/83335991-b900c280-a2b0-11ea-9b5a-69e1b4325e24.png "Screenshot")
 
 ## Status:
 
