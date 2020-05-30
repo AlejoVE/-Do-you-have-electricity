@@ -1,5 +1,5 @@
 {
-  "nextId": 16,
+  "nextId": 19,
   "reports": [
     {
       "id": 1,
@@ -16,14 +16,6 @@
       "city": "Barinas",
       "street_address": "some street",
       "date": "Sat May 30 2020 19:56:26"
-    },
-    {
-      "id": 3,
-      "have_electricity": false,
-      "state": "portuguesa",
-      "city": "Guanarito",
-      "street_address": "some street",
-      "date": "Wed May 27 2020 18:57:50"
     },
     {
       "id": 7,
@@ -43,11 +35,19 @@
     },
     {
       "id": 15,
+      "have_electricity": true,
+      "state": "Anzoátegui",
+      "city": "some city",
+      "street_address": "some street",
+      "date": "Sat May 30 2020 20:43:48"
+    },
+    {
+      "id": 17,
       "have_electricity": false,
       "state": "Anzoátegui",
-      "city": "Barcelona",
+      "city": "Puerto la cruz",
       "street_address": "some street",
-      "date": "Sat May 30 2020 19:58:00"
+      "date": "Sat May 30 2020 20:41:30"
     }
   ]
 }
