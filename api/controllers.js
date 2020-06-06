@@ -16,12 +16,7 @@ const SCHEMA_PATH = path.join(
   "/report-schema.json"
 );
 const File_SCHEMA = require(SCHEMA_PATH);
-const DATA_PATH = path.join(
-  __dirname,
-  "/..",
-  config.DATA_DIR,
-  "/reports-data.json"
-);
+const DATA_PATH = path.join(__dirname, "..", "data/courses.json");
 
 const controllers = {
   hello: (req, res) => {
